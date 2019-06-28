@@ -12,7 +12,10 @@
             <li v-for="(item , key) in listItems" :key="`ul_${key}`">{{item}}</li>
         </ul>
         <ol>
-            <li v-for="(item , key) in listItems" :key="`ol_${key}`">{{item}}</li>
+            <li v-for="(item , key) in listItems" :key="`ol_${key}`" class="item" :class="{
+                strong:key==0,
+                hello:key==1,
+            }">{{item}}</li>
         </ol>
         {{listItems}}
         <p>Insert: <input type="text" v-model="itemValues"></p>
@@ -66,5 +69,16 @@
 </script>
 
 <style lang="less" scoped>
-
+.strong{
+    color: green;
+}
+.hello{
+    color: yellow;
+}
+ul{
+    border-bottom: 3px dashed red;
+    li{
+        border-bottom: 1px dashed blue;
+    }
+}
 </style>
